@@ -1,0 +1,13 @@
+### Ошибочные запросы
+GET http://localhost:8088 HTTP/1.1
+###
+GET http://localhost:8088/game HTTP/1.1
+
+### Тестовые запросы
+GET http://localhost:8088/games HTTP/1.1
+###
+GET http://localhost:8088/game/gta-5 HTTP/1.1
+###
+GET http://localhost:8088/games?sortType=rating&orderType=asc HTTP/1.1
+###
+GET http://localhost:8088/games?sortType=rating&orderType=desc HTTP/1.1

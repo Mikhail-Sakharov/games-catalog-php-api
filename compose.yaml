@@ -1,0 +1,23 @@
+services:
+  mysql-service:
+    image: mysql
+    container_name: mysql-conatainer
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_USER=Admin
+      - MYSQL_PASSWORD=P@ssword123456
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database:/var/lib/mysql
+    restart: always
+
+  phpmyadmin-service:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin-conatainer
+    environment:
+      - PMA_HOST=mysql-service
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "8080:80"
+    restart: always
